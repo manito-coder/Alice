@@ -23,17 +23,3 @@ def get_models():
 def get_durations(envelope):
     durations = [gt.time.tmax for stimulus, gt in zip(STIMULI, envelope)]
     return durations
-
-def get_subject_model_predictors(models):
-    subject_model_predictors = {}
-    for subject in SUBJECTS:
-        subject_model_predictors[subject] = {} 
-
-        for model, predictors in models.items():
-            # print(f"Concatenating: {subject} ~ {model} predictors")
-            # Select and concetenate the predictors corresponding to the EEG trials
-            predictors_concatenated = []
-            for predictor in predictors:
-                predictors_concatenated.append(eelbrain.concatenate([predictor[i] for i in trial_indexes]))
-            subject_model_predictors[subject][model] = predictors_concatenated
-    return subject_model_predictors
