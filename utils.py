@@ -1,7 +1,7 @@
-from dependencies import *
+import dependencies
 
 def get_models():
-    envelopes_log_8band = eelbrain.load.unpickle(PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-log-8band.pickle')
+    envelopes_log_8band = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-log-8band.pickle')
 
     models = {
     #'envelope_log': [envelopes_log],
@@ -21,5 +21,5 @@ def get_models():
     return models
 
 def get_durations(envelope):
-    durations = [gt.time.tmax for stimulus, gt in zip(STIMULI, envelope)]
+    durations = [gt.time.tmax for stimulus, gt in zip(dependencies.STIMULI, envelope)]
     return durations

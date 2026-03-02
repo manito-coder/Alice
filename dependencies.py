@@ -8,8 +8,7 @@ import eelbrain
 import mne
 import re
 from paths import *
-import utils
-
+from utils import *
 
 # CONSTANTS
 
