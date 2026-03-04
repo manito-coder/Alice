@@ -2,13 +2,16 @@ import dependencies
 
 def get_models():
     envelopes_log_8band = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-log-8band.pickle')
+    envelopes_onset = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-log.pickle')
+    envelopes_log = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-onset.pickle')
 
     models = {
-    #'envelope_log': [envelopes_log],
+    'envelope_log': [envelopes_log],
+    'envelope_onset': [envelopes_onset],
     # Compare different scales for the acoustic response
-    'envelope_log_8band': [envelopes_log_8band],
+    #'envelope_log_8band': [envelopes_log_8band],
     # The acoustic edge detection model
-    #'envelope_log_onset': [envelopes_log, envelopes_onset],
+    'envelope_log_onset': [envelopes_log, envelopes_onset],
     #'envelope_onset_8band': [envelopes_onset_8band],
     #'acoustic_8band': [envelopes_log_8band, envelopes_onset_8band],
     # Models with word-onsets and word-class
