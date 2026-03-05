@@ -31,6 +31,9 @@ TRF_DIR = DATA_ROOT / 'TRFs'
 # Figures directory
 FIGURES_DIR = DATA_ROOT / 'figures'
 
+# Universal TRF directory
+UNIVERSAL_TRF_DIR = DATA_ROOT / 'universal-TRF'
+
 # Make sure all directories exist
-for directory in [DATA_ROOT, ENVELOPES_DIR, PREDICTOR_DIR, PROCESSED_PREDICTOR_DIR, EEG_DIR, TRF_DIR, FIGURES_DIR]:
+for directory in [DATA_ROOT, ENVELOPES_DIR, PREDICTOR_DIR, PROCESSED_PREDICTOR_DIR, EEG_DIR, TRF_DIR, FIGURES_DIR, UNIVERSAL_TRF_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
