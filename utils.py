@@ -1,6 +1,6 @@
 import dependencies
 
-def get_models(exclude=['envelope_log_8band', 'envelope_log_onset']):
+def get_models(exclude=['envelope_log_8band']):
     
     envelopes_log_8band = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-log-8band.pickle')
     envelopes_log = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-log.pickle')
@@ -22,7 +22,7 @@ def get_models(exclude=['envelope_log_8band', 'envelope_log_onset']):
     #'acoustic+words+lexical': [envelopes_log_8band, envelopes_onset_8band, envelopes_words_onset, 
     #                           envelopes_words_lexical, envelopes_words_nlexical],
 }
-    if exclude != None:
+    if exclude != []:
         for exclution in exclude:
             models.pop(exclution)
     return models
