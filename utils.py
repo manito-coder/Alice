@@ -1,9 +1,10 @@
 import dependencies
 
-def get_models():
+def get_models(exclude=['envelope_log_8band', 'envelope_log_onset']):
+    
     envelopes_log_8band = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-log-8band.pickle')
-    envelopes_onset = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-log.pickle')
-    envelopes_log = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-onset.pickle')
+    envelopes_log = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-log.pickle')
+    envelopes_onset = dependencies.eelbrain.load.unpickle(dependencies.PROCESSED_PREDICTOR_DIR / f'~processed_envelopes-onset.pickle')
 
     models = {
     'envelope_log': [envelopes_log],
@@ -21,6 +22,9 @@ def get_models():
     #'acoustic+words+lexical': [envelopes_log_8band, envelopes_onset_8band, envelopes_words_onset, 
     #                           envelopes_words_lexical, envelopes_words_nlexical],
 }
+    if exclude != None:
+        for exclution in exclude:
+            models.pop(exclution)
     return models
 
 def get_durations(envelope):
