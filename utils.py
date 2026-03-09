@@ -9,7 +9,7 @@ def get_models():
     'envelope_log': [envelopes_log],
     'envelope_onset': [envelopes_onset],
     # Compare different scales for the acoustic response
-    #'envelope_log_8band': [envelopes_log_8band],
+    'envelope_log_8band': [envelopes_log_8band],
     # The acoustic edge detection model
     'envelope_log_onset': [envelopes_log, envelopes_onset],
     #'envelope_onset_8band': [envelopes_onset_8band],
