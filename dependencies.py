@@ -9,6 +9,9 @@ import mne
 import re
 from paths import *
 from utils import *
+from matplotlib.ticker import MultipleLocator, FormatStrFormatter
+from scipy.stats import ttest_rel
+
 
 # CONSTANTS
 
