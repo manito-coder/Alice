@@ -5,7 +5,7 @@ import dependencies
 #DATA_PREPROC_URL = 'https://zenodo.org/record/1199011/files/DATA_preproc.zip'
 
 # Root data directory
-DATA_ROOT = dependencies.Path("~").expanduser() / 'Data' / 'Alice-2'
+DATA_ROOT = dependencies.Path("~").expanduser() / 'Data' / 'Alice'
 
 # Preprocessed data directory
 #DATA_PREPROC = DATA_ROOT / "data_preprocessed"
