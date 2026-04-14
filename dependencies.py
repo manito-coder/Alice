@@ -11,6 +11,7 @@ from matplotlib.gridspec import GridSpecFromSubplotSpec
 import eelbrain
 import mne
 import re
+import pandas as pd
 from paths import *
 from utils import *
 from scipy.stats import ttest_rel, pearsonr, ttest_1samp, zscore
