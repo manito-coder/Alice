@@ -14,7 +14,7 @@ DATA_ROOT = dependencies.Path("~").expanduser() / 'Data' / 'Alice'
 STIMULUS_DIR = DATA_ROOT / 'stimuli'
 
 # Envelopes directory
-ENVELOPES_DIR = DATA_ROOT / "envelopes"
+#ENVELOPES_DIR = DATA_ROOT / "envelopes"
 
 # Predictors directory
 PREDICTOR_DIR = DATA_ROOT / 'predictors'
@@ -32,5 +32,5 @@ TRF_DIR = DATA_ROOT / 'TRFs'
 FIGURES_DIR = DATA_ROOT / 'figures'
 
 # Make sure all directories exist
-for directory in [DATA_ROOT, ENVELOPES_DIR, PREDICTOR_DIR, PROCESSED_PREDICTOR_DIR, EEG_DIR, TRF_DIR, FIGURES_DIR]:
+for directory in [DATA_ROOT, PREDICTOR_DIR, PROCESSED_PREDICTOR_DIR, EEG_DIR, TRF_DIR, FIGURES_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
